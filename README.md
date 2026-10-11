@@ -1,6 +1,6 @@
 # VisTag
 
-A **PaperMC 1.21.x** plugin — player nametags are only visible when no opaque block stands between two players. **Transparent** blocks (glass, leaves, water…) do not hide nametags.
+A **PaperMC 1.26.2-x** plugin — player nametags are only visible when no opaque block stands between two players. **Transparent** blocks (glass, leaves, water…) do not hide nametags.
 
 ## ✨ Features
 
@@ -15,15 +15,13 @@ A **PaperMC 1.21.x** plugin — player nametags are only visible when no opaque 
 2. Restart the server (not `/reload`).
 3. `plugins/VisTag/config.yml` is generated on first startup.
 
-**Requirements**: Paper 1.21.x, Java 21.
+**Requirements**: Paper 1.26.x, Java 25.
 
 ## 🛠️ Build
 
 ```bash
 ./gradlew build   # JAR in build/libs/
 ```
-
-Depends on `io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT`.
 
 ## ⚙️ Configuration (`config.yml`)
 
@@ -75,6 +73,3 @@ Block IDs accept both `glass` and `minecraft:glass` formats.
 - FOV cone control (visible only when looked at).
 - Per-player `/vistag toggle`.
 - Exact raycast on collision shapes (voxel shape).
-
----
-Author: damien millet
