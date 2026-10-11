@@ -9,13 +9,13 @@ A **PaperMC 26.2** plugin — player nametags are only visible when no opaque bl
 - Configurable **exclusion** (never hides) and **inclusion** (always hides) block lists, editable in-game, persisted to `config.yml`.
 - **Sneak hiding**: sneak to hide your nametag (`hide-when-sneaking`).
 - **FOV cone**: nametags visible only inside the viewer's view cone (`fov-cone-degrees`, `0` = disabled).
-- **Per-player toggle**: `/vistag toggle` lets each player opt out individually.
+- **Admin-controlled toggle**: `/vistag toggle <player>` lets admins decide who has nametag filtering enabled — persisted across restarts.
 - **Exact raycast** on block collision shapes (voxel shapes), with a faster coarse mode.
 - Configurable max distance and check frequency.
 
 ## 📦 Installation
 
-1. Drop `vistag-1.1.0-26.2.jar` into your server's `plugins/` folder.
+1. Drop `vistag-1.2.0-26.2.jar` into your server's `plugins/` folder.
 2. Restart the server (not `/reload`).
 3. `plugins/VisTag/config.yml` is generated on first startup.
 
@@ -47,6 +47,9 @@ fov-cone-degrees: 0
 # Use exact block collision shapes for the raycast (voxel shape).
 # false = block-center test (faster, coarser).
 exact-raycast: true
+# Players (UUIDs) whose nametag filtering is disabled by an admin.
+# Managed via /vistag toggle <player>.
+toggled-off-players: []
 ```
 
 Priority: `excluded` > `included` > default behavior (`isOccluding`).
@@ -57,7 +60,7 @@ Alias: `/vt`
 
 | Command | Effect | Permission |
 |---|---|---|
-| `/vistag toggle` | Toggle VisTag for yourself (as viewer) | `vistag.toggle` (default: everyone) |
+| `/vistag toggle <player>` | Enable/disable filtering for a player (persisted) | `vistag.admin` |
 | `/vistag exclude add <block>` | This block will never hide nametags | `vistag.admin` (default: op) |
 | `/vistag exclude list` | List exclusions | `vistag.admin` |
 | `/vistag exclude remove <block>` | Remove an exclusion | `vistag.admin` |
@@ -88,5 +91,4 @@ Block IDs accept both `glass` and `minecraft:glass` formats.
 ## 🗺️ Roadmap ideas
 
 - Per-target toggle (hide your own nametag from everyone).
-- Persist player toggles across restarts.
 - Configurable sneak override for spectators / staff.
