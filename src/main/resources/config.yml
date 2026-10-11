@@ -1,0 +1,18 @@
+# Blocks that NEVER hide nametags, even opaque ones (highest priority).
+excluded: []
+# Blocks that ALWAYS hide nametags, even transparent ones.
+included: []
+# Update frequency in ticks (20 = 1 s).
+check-interval-ticks: 10
+# Maximum distance (in blocks) at which a nametag can be visible.
+max-distance: 64
+# Hide nametags of sneaking players.
+hide-when-sneaking: true
+# FOV cone half-angle in degrees. 0 disables the cone.
+fov-cone-degrees: 0
+# Use exact block collision shapes for the raycast (voxel shape).
+# false = block-center test (faster, coarser).
+exact-raycast: true
+# Players (UUIDs) whose nametag filtering is disabled by an admin.
+# These players see all nametags. Managed via /vistag toggle <player>.
+toggled-off-players: []

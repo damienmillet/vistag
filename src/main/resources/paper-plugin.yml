@@ -1,0 +1,10 @@
+name: VisTag
+version: 1.2.0
+main: dev.damien.vistag.VisTagPlugin
+api-version: '26.2'
+authors: [damien millet]
+description: Nametags visible only in line of sight, with configurable block lists, sneak hiding, FOV cone and admin-controlled toggle.
+permissions:
+  vistag.admin:
+    description: Manage VisTag block lists, toggle players, reload
+    default: op
